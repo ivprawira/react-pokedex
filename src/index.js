@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './pages/App';
+import PokemonDetail from './pages/PokemonDetail'
 import reportWebVitals from './reportWebVitals';
 import { Route, BrowserRouter as Router, Switch } from "react-router-dom";
 import { ApolloClient, InMemoryCache, ApolloProvider } from "@apollo/client";
@@ -10,7 +11,7 @@ const routing = (
   <Router>
     <Switch>
       <Route exact path="/" component={App} />
-      {/* <Route path="/pokemonDetail" component={FirstPage} /> */}
+      <Route path="/pokemonDetail/:name" component={PokemonDetail} />
       {/* <Route component={NotFound} /> */}
     </Switch>
   </Router>
