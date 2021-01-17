@@ -1,25 +1,35 @@
 .navbar {
-    display: block;
-    height: 80px;
-    background-color: red;
+    display: flex;
+    height: 100px;
+    justify-content: center;
+    align-items: center;
+    background-color: #F93822;
     color: white;
 }
 
 .navbar__title {
-    float: left;
+    display: block;
 }
 
 .navbar__navigation {
-    float: right;
+    display: block;
+}
+
+.spacer {
+    flex-grow: 1;
 }
 
 .navbar__item {
-    display: inline-block;
-    vertical-align: middle;
+    display: block;
+    font-size: 1.5rem;
+    font-weight: 700;
 }
+
 
 .navbar__item a p {
     margin: 0px;
+    font-size: 1.25rem;
+    font-weight: 500;
 }
 
 a {
