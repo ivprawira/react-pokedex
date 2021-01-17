@@ -1,0 +1,46 @@
+.navbar {
+    display: block;
+    height: 80px;
+    background-color: red;
+    color: white;
+}
+
+.navbar__title {
+    float: left;
+}
+
+.navbar__navigation {
+    float: right;
+}
+
+.navbar__item {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.navbar__item a p {
+    margin: 0px;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:link {
+    color: white;
+}
+
+/* visited link */
+a:visited {
+    color: white;
+}
+
+/* mouse over link */
+a:hover {
+    color: white;
+}
+
+/* selected link */
+a:active {
+    color: white;
+}
