@@ -20,6 +20,7 @@
   border-radius: 8px;
   border: solid 1px #bdbcbc;
   cursor: pointer;
+  background-color: transparent;
 }
 
 .refetch button:hover {
