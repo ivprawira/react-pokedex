@@ -27,7 +27,7 @@ const PokemonDetail = () => {
   console.log(pokemonDetail);
   return (
     <>
-      <Navbar pageTitle={`Pokemon Detail - ${name}`} />
+      <Navbar pageTitle={`Pokémon Detail - ${name}`} />
       {error && `Error! ${error.message}`}
       {loading && <span>Loading</span>}
       {!(error || loading) && (

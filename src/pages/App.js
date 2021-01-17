@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "../assets/App.css";
 import Navbar from "../components/Navbar";
+import LoadingBar from "../components/LoadingBar";
 import { GET_POKEMON_LIST } from "../API/api.js";
 import { useQuery } from "@apollo/client";
 import PokemonTile from "../components/PokemonTile";
@@ -33,7 +34,7 @@ const App = (props) => {
 
   return (
     <>
-      <Navbar pageTitle="Pokemon List" />
+      <Navbar pageTitle="Pokédex" />
       {error && `Error! ${error.message}`}
       {!error && (
         <>
@@ -48,8 +49,12 @@ const App = (props) => {
               );
             })}
           </div>
-          {loading && <div>Loading ...</div>}
-          <button onClick={getNextList}>Refetch</button>
+          {loading && <LoadingBar />}
+          {!loading && (
+            <div className="refetch">
+              <button onClick={getNextList}>Show more Pokémon</button>
+            </div>
+          )}
         </>
       )}
     </>

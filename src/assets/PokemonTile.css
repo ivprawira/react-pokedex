@@ -1,0 +1,45 @@
+.pokemon-tile {
+    margin: 10px;
+    width: 170px;
+    height: 170px;
+    border: solid 1px #bdbcbc;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+.pokemon-tile:hover {
+    -webkit-box-shadow: -2px 6px 13px -4px rgba(0,0,0,0.52); 
+    box-shadow: -2px 6px 13px -4px rgba(0,0,0,0.52);
+}
+
+.pokemon-tile img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.pokemon-tile p {
+    text-align: center;
+    margin: 0px;
+    font-variant: small-caps;
+    color: black;
+    font-size: 1.2rem;
+}
+
+@media screen and (max-width: 600px) {
+.pokemon-tile {
+        width: 140px;
+        height: 140px;
+        border: solid 1px #bdbcbc;
+        border-radius: 8px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        flex-direction: column;
+    }
+}
