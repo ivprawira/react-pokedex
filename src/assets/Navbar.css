@@ -5,6 +5,10 @@
     align-items: center;
     background-color: #e63946;
     color: white;
+
+    position: fixed;
+    top: 0;
+    width: 100vw;
 }
 
 .spacer {
@@ -17,10 +21,6 @@
     font-weight: 700;
     font-variant: small-caps;
     margin: 0px 30px;
-
-    /* position: sticky;
-    position: -webkit-sticky;
-    top: 0; */
 }
 
 .navbar__item--title {
