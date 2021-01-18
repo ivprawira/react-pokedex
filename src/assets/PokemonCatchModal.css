@@ -1,0 +1,17 @@
+.catch-modal {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+
+    padding-top: 100px;
+}
+
+.catch-modal p {
+    text-align: center;
+    color: #eeeeee;
+    font-size: 3rem;
+    margin: 0;
+}
