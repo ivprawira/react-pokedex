@@ -10,20 +10,10 @@ import "../assets/PokemonDetail.css";
 import pokeball from "../assets/icons/pokeball.png";
 
 const PokemonDetail = () => {
-  // const [pokemonDetail, setPokemonDetail] = useState({});
   const { name } = useParams();
-  // const [variables, setVariables] = useState({
-  //   name,
-  // });
 
   const { loading, error, data: pokemonDetail } = useQuery(GET_POKEMON_DETAIL, {
     variables: { name },
-    // onCompleted: (res) => {
-    //   console.log("A");
-    //   console.log(res);
-    //   const { pokemon } = res;
-    //   setPokemonDetail(pokemon);
-    // },
     onError: (e) => {
       throw e;
     },
@@ -33,7 +23,11 @@ const PokemonDetail = () => {
     <>
       <Navbar pageTitle={`Pokémon Detail - ${name}`} />
       {error && `Error! ${error.message}`}
-      {loading && <LoadingBar />}
+      {loading && (
+        <div className="pokemon-detail">
+          <LoadingBar />
+        </div>
+      )}
       {!(error || loading) && (
         <>
           <div className="pokemon-detail">
@@ -66,8 +60,10 @@ const PokemonDetail = () => {
                 })}
               </div>
             </div>
-
+          </div>
+          <div className="pokeball-catch">
             <img src={pokeball} alt="pokeball" />
+            <button>catch</button>
           </div>
         </>
       )}

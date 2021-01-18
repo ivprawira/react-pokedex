@@ -3,6 +3,8 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin-top: 120px;
+    margin-bottom: 120px;
 }
 
 .pokemon-detail img {
@@ -36,4 +38,26 @@
     justify-content: center;
     align-items: center;
     margin: 20px;
+}
+
+.pokeball-catch {
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.pokeball-catch button {
+    font-variant: small-caps;
+    font-size: 1rem;
+    border: solid 0.5px black;
+    border-radius: 8px;
+    padding: 8px 20px;
+    cursor: pointer;
 }

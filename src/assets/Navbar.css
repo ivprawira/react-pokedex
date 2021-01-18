@@ -76,7 +76,7 @@ a {
 }
 
 @media screen and (max-width: 600px) {
-.navbar-hide {
+    .navbar-hide {
         display: none;
     }
 }
