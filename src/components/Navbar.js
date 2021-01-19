@@ -18,7 +18,7 @@ const Navbar = (props) => {
         </Link>
       </div>
       <div className="navbar__item navbar-hide">
-        <Link to={`/`}>
+        <Link to={`/myPokemonList`}>
           <img src={pokeball_icon} alt="Pokeball" />
           <p>My Pokémon</p>
         </Link>
