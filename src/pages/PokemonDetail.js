@@ -81,7 +81,7 @@ const PokemonDetail = () => {
               <PokemonCatchModal
                 pokemon={name}
                 isPokemonCaught={isPokemonCaught}
-                imageURL={pokemonDetail.pokemon.sprites.front_default}
+                pokemonDetail={pokemonDetail}
               />
             </div>
           )}
