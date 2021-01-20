@@ -36,7 +36,7 @@ const PokemonCatchModal = ({ pokemon, isPokemonCaught, pokemonDetail }) => {
           <img src={pokemonDetail.pokemon.sprites.front_default} alt="Pokemon Sprites" />
           <p className="catch-modal__caption">let's give nickname to your new friend!</p>
           <input type="text" value={nickname} onChange={handleNicknameInput} />
-          <button onClick={setMyPokemon}>Confirm</button>
+          {(nickname.length > 0) && (<button onClick={setMyPokemon}>Confirm</button>)}
         </>
       )}
     </div>
