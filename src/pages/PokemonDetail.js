@@ -6,6 +6,7 @@ import Navbar from "../components/Navbar";
 import LoadingBar from "../components/LoadingBar";
 import Badge from "../components/Badge";
 import PokemonCatchModal from "../components/PokemonCatchModal";
+import close_icon from "../assets/icons/close_icon.png";
 
 import "../assets/PokemonDetail.css";
 import pokeball from "../assets/icons/pokeball.png";
@@ -84,6 +85,9 @@ const PokemonDetail = () => {
           </div>
           {isPokemonCaught !== null && (
             <div className="overlay">
+              <div className="modal__close" onClick={hideCatchModal}>
+                <img src={close_icon} title="close" alt="close x" />
+              </div>
               <PokemonCatchModal
                 pokemon={name}
                 isPokemonCaught={isPokemonCaught}
