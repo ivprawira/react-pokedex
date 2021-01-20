@@ -4,6 +4,7 @@ import './index.css';
 import App from './pages/App';
 import PokemonDetail from './pages/PokemonDetail'
 import MyPokemonList from './pages/MyPokemonList';
+import MyPokemonDetail from './pages/MyPokemonDetail'
 import reportWebVitals from './reportWebVitals';
 import { Route, BrowserRouter as Router, Switch } from "react-router-dom";
 import { ApolloClient, InMemoryCache, ApolloProvider } from "@apollo/client";
@@ -14,6 +15,7 @@ const routing = (
       <Route exact path="/" component={App} />
       <Route path="/pokemonDetail/:name" component={PokemonDetail} />
       <Route path="/myPokemonList" component={MyPokemonList} />
+      <Route path="/myPokemonDetail/:name" component={MyPokemonDetail} />
       {/* <Route component={NotFound} /> */}
     </Switch>
   </Router>

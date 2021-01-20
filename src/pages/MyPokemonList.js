@@ -22,7 +22,7 @@ const MyPokemonList = () => {
 
   return (
     <>
-      <Navbar pageTitle="Pokédex" />
+      <Navbar pageTitle="My Pokémon List" />
       {(pokemonList.length > 0) && (
         <div className="my-pokemon-list">
           {pokemonList.map((pokemon, key) => {
