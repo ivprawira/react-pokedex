@@ -29,5 +29,11 @@
 }
 
 @media screen and (max-width: 600px) {
-  
+  .App {
+    margin-top: 70px;
+  }
+
+  .refetch {
+    margin-bottom: 60px;
+  }
 }

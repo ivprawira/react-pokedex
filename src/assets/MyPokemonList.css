@@ -1,7 +1,14 @@
 .my-pokemon-list {
     margin-top: 120px;
+    margin-bottom: 70px;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
+  }
+
+  @media screen and (max-width: 600px) {
+    .my-pokemon-list {
+      margin: 70px 0;
+    }
   }
