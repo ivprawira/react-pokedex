@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { get, del } from 'idb-keyval'
+import { set, get, del } from 'idb-keyval'
 import { useParams, useHistory } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import LoadingBar from "../components/LoadingBar";
@@ -23,10 +23,31 @@ const MyPokemonDetail = () => {
     fetchDetail()
   }, [])
 
+  // fetch my pokemon ids
+  const [registeredIds, setRegisteredIds] = useState([])
+  useEffect( () => {
+    const fetchIds = async () => {
+      const res = await get('')
+      setRegisteredIds(res)
+    }
+    fetchIds()
+  }, [])
+
+  // update registered ids or my pokemon ids if pokemon is released
+  const updateRegisteredIds = () => {
+    let tempIds = [...registeredIds]
+    const index = tempIds.indexOf(detail.pokemon.id);
+    if (index > -1) {
+      tempIds.splice(index, 1);
+    }
+    set('', tempIds)
+  }
+
   // methods or action to release pokemon
   const history = useHistory()
   const releasePokemon = () => {
     del(name)
+    updateRegisteredIds()
     history.push('/myPokemonList')
   }
 
