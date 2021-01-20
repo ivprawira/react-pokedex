@@ -7,6 +7,7 @@ import pokedex_icon from "../assets/icons/pokedex_icon.png";
 
 const Navbar = (props) => {
   return (
+    <>
     <div className="navbar">
       {/* <div className="navbar__item">Pokédex</div> */}
       <div className="navbar__item navbar__item--title">{props.pageTitle}</div>
@@ -24,6 +25,23 @@ const Navbar = (props) => {
         </Link>
       </div>
     </div>
+
+    {/* FOR MOBILE */}
+    <div className="navbar-mobile">
+      <div className="navbar-mobile__item">
+        <Link to={`/`}>
+          <img src={pokedex_icon} alt="Pokedex" />
+          <p>Pokédex</p>
+        </Link>
+      </div>
+      <div className="navbar-mobile__item">
+        <Link to={`/myPokemonList`}>
+          <img src={pokeball_icon} alt="Pokeball" />
+          <p>My Pokémon</p>
+        </Link>
+      </div>
+    </div>
+    </>
   );
 };
 
