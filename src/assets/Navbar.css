@@ -9,6 +9,7 @@
     position: fixed;
     top: 0;
     width: 100vw;
+    z-index: 2;
 }
 
 .spacer {
@@ -98,6 +99,7 @@ a {
         position: fixed;
         bottom: 0;
         width: 100vw;
+        z-index: 2;
     }
 
     .navbar-mobile__item a {

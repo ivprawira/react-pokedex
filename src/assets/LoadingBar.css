@@ -4,3 +4,9 @@
     text-align: center;
     margin: 5vh 0;
 }
+
+@media screen and (max-width: 600px) {
+    .loading {
+        margin-bottom: 100px;
+    }
+}
