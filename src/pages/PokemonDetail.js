@@ -51,7 +51,10 @@ const PokemonDetail = () => {
               alt={`${name} Profile`}
             />
             <div className="pokemon-detail__box">
-              <p>{name}</p>
+              <p className="pokemon-detail__title">{name}</p>
+
+              {/* POKEMON TYPE */}
+              <p className="pokemon-detail__sub-title">Pokémon Type</p>
               <div className="pokemon-detail__badges">
                 {pokemonDetail.pokemon.types.map((type, key) => {
                   return (
@@ -63,6 +66,9 @@ const PokemonDetail = () => {
                   );
                 })}
               </div>
+
+              {/* POKEMON MOVES */}
+              <p className="pokemon-detail__sub-title">Pokémon Moves</p>
               <div className="pokemon-detail__badges">
                 {pokemonDetail.pokemon.moves.map((move, key) => {
                   return (

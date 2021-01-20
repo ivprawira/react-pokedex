@@ -15,7 +15,7 @@
 .pokemon-detail__box {
     width: 96vw;
     background-color: #a8dadc;
-    /* border-radius: 20px 20px 0px 0px; */
+    border-radius: 20px 20px 20px 20px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -23,12 +23,18 @@
     padding: 10px;
 }
 
-.pokemon-detail p {
+.pokemon-detail__title {
     margin: 0px;
     font-size: 3rem;
     font-variant: small-caps;
     font-weight: 600px;
     color: black;
+}
+
+.pokemon-detail__sub-title {
+    font-size: 1.2rem;
+    margin-top: 20px;
+    margin-bottom: -10px;
 }
 
 .pokemon-detail__badges {
@@ -82,4 +88,31 @@
     top: 0;
     right: 0;
     color: white;
+}
+
+/* BELOW FOR MY POKEMON DETAIL ONLY */
+/* -------------------------------------------
+------------------------------------------- */
+
+.release {
+    padding: 20px 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: -170px;
+}
+
+.release button {
+    padding: 8px 40px;
+    font-size: 1rem;
+    border-radius: 8px;
+    border: solid 1px #bdbcbc;
+    cursor: pointer;
+    color: white;
+    background-color: #ee5151;
+}
+
+.release button:hover {
+    -webkit-box-shadow: -2px 6px 13px -4px rgba(0,0,0,0.52); 
+    box-shadow: -2px 6px 13px -4px rgba(0,0,0,0.52);
 }
