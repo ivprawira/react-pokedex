@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { entries } from 'idb-keyval'
 import "../assets/MyPokemonList.css"
 import Navbar from "../components/Navbar"
-import LoadingBar from "../components/LoadingBar"
+import EmptyList from "../components/EmptyList"
 import PokemonTile from "../components/PokemonTile"
 
 
@@ -40,7 +40,11 @@ const MyPokemonList = () => {
           })}
         </div>
       )}
-      {(pokemonList.length < 1) && <LoadingBar />}
+      {(pokemonList.length < 1) && (
+        <div className="my-pokemon-list">
+          <EmptyList />
+        </div>
+      )}
       
     </>   
   )
