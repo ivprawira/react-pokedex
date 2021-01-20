@@ -11,7 +11,10 @@ const MyPokemonList = () => {
 
   useEffect( () => {
     const fetchData = async () => {
-      const result = await entries()
+      let result = await entries()
+      result = result.filter( (poke) => {
+        return (poke[0] !== '')
+      })
       setPokemonList(result)
     }
     fetchData()

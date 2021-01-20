@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { set, keys } from 'idb-keyval'
+import { set, get, keys } from 'idb-keyval'
 import { useHistory } from 'react-router-dom'
 import "../assets/PokemonCatchModal.css";
 
@@ -12,6 +12,15 @@ const PokemonCatchModal = ({ pokemon, isPokemonCaught, pokemonDetail }) => {
     }
     fetchData()
   }, [])
+
+  const [registeredIds, setRegisteredIds] = useState([])
+  useEffect( () => {
+    const fetchIds = async () => {
+      const res = await get('')
+      setRegisteredIds(res)
+    }
+    fetchIds()
+  }, [])
   
   let isSuccess = isPokemonCaught ? "GOTCHA" : "OH NO...";
   let message = isPokemonCaught ? "was caught!" : "has escaped";
@@ -23,9 +32,20 @@ const PokemonCatchModal = ({ pokemon, isPokemonCaught, pokemonDetail }) => {
     setNickname(event.target.value);
   };
 
+  const registerPokemonId = () => {
+    if (nameList.includes('')) {
+      const newIds = [...registeredIds, pokemonDetail.pokemon.id]
+      set('', newIds)
+    } else {
+      set('', [pokemonDetail.pokemon.id])
+    }
+  }
+
   const history = useHistory()
   const setMyPokemon = () => {
     set(nickname, pokemonDetail)
+    registerPokemonId()
+    console.log(nameList.includes(''))
     history.push('/myPokemonList')
   }
 
