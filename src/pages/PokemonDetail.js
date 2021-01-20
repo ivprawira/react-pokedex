@@ -12,8 +12,10 @@ import "../assets/PokemonDetail.css";
 import pokeball from "../assets/icons/pokeball.png";
 
 const PokemonDetail = () => {
+  // get pokemon name from params
   const { name } = useParams();
 
+  // API call for pokemon detail
   const { loading, error, data: pokemonDetail } = useQuery(GET_POKEMON_DETAIL, {
     variables: { name },
     onError: (e) => {
@@ -21,8 +23,10 @@ const PokemonDetail = () => {
     },
   });
 
+  // state to store pokemon caught status
   const [isPokemonCaught, setIsPokemonCaught] = useState(null);
 
+  // probability to catch pokemon of 50%
   const getRandomSuccess = () => {
     return Math.random() < 0.5;
   };
@@ -31,6 +35,7 @@ const PokemonDetail = () => {
     setIsPokemonCaught(getRandomSuccess());
   };
 
+  // hide modal for catching pokemon
   const hideCatchModal = () => {
     setIsPokemonCaught(null);
   };
@@ -83,6 +88,8 @@ const PokemonDetail = () => {
               </div>
             </div>
           </div>
+
+          {/* overlay and modal for catching pokemon interaction */}
           {isPokemonCaught !== null && (
             <div className="overlay">
               <div className="modal__close" onClick={hideCatchModal}>
@@ -95,6 +102,8 @@ const PokemonDetail = () => {
               />
             </div>
           )}
+
+          {/* pokeball to catch pokemon and trigger pokemon catching modal */}
           {(!isPokemonCaught || isPokemonCaught === null) && (
             <div className="pokeball-catch" onClick={simulatePokemonCatch}>
               <img src={pokeball} alt="pokeball" />

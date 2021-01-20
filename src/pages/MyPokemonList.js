@@ -7,11 +7,14 @@ import PokemonTile from "../components/PokemonTile"
 
 
 const MyPokemonList = () => {
+  // state for my pokemon list
   const [pokemonList, setPokemonList] = useState({ data: [] })
 
+  // fetch my pokemon list from idb-keyval
   useEffect( () => {
     const fetchData = async () => {
       let result = await entries()
+      // filter special key (empty string key) that stores my pokemon ids
       result = result.filter( (poke) => {
         return (poke[0] !== '')
       })

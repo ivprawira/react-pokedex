@@ -41,6 +41,7 @@ const PokemonCatchModal = ({ pokemon, isPokemonCaught, pokemonDetail }) => {
 
   // register caught pokemon id to idb-keyval
   // OR set up to idb-keyval if no pokemon is caught
+  // special key of empty string is used to store caught pokemon ids
   const registerPokemonId = () => {
     if (nameList.includes('')) {
       const newIds = [...registeredIds, pokemonDetail.pokemon.id]

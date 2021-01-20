@@ -8,9 +8,13 @@ import Badge from "../components/Badge";
 import "../assets/PokemonDetail.css";
 
 const MyPokemonDetail = () => {
+  // state for pokemon detail
   const [detail, setDetail] = useState({ data: [] })
+  
+  // get pokemon name from params
   const { name } = useParams();
 
+  // fetch pokemon detail from idb-keyval
   useEffect( () => {
     const fetchDetail = async () => {
       const result = await get(name)
@@ -19,6 +23,7 @@ const MyPokemonDetail = () => {
     fetchDetail()
   }, [])
 
+  // methods or action to release pokemon
   const history = useHistory()
   const releasePokemon = () => {
     del(name)
