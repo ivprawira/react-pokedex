@@ -13,7 +13,7 @@
 }
 
 .pokemon-detail__box {
-    width: 96vw;
+    width: 90vw;
     background-color: #a8dadc;
     border-radius: 20px 20px 20px 20px;
     display: flex;
@@ -94,6 +94,13 @@
 .modal__close img {
     width: 30px;
     height: 30px;
+}
+
+@media screen and (max-width: 600px) {
+    .pokemon-detail {
+        margin-top: 70px;
+        margin-bottom: 230px;
+    }
 }
 
 /* BELOW FOR MY POKEMON DETAIL ONLY */
