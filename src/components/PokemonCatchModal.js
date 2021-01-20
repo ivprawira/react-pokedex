@@ -4,6 +4,8 @@ import { useHistory } from 'react-router-dom'
 import "../assets/PokemonCatchModal.css";
 
 const PokemonCatchModal = ({ pokemon, isPokemonCaught, pokemonDetail }) => {
+  // get namelist of my pokemons
+  // to check whether nickname is duplicate or not
   const [nameList, setNameList] = useState([]);
   useEffect( () => {
     const fetchData = async () => {
@@ -13,6 +15,7 @@ const PokemonCatchModal = ({ pokemon, isPokemonCaught, pokemonDetail }) => {
     fetchData()
   }, [])
 
+  // get existing my pokemon ids
   const [registeredIds, setRegisteredIds] = useState([])
   useEffect( () => {
     const fetchIds = async () => {
@@ -22,16 +25,22 @@ const PokemonCatchModal = ({ pokemon, isPokemonCaught, pokemonDetail }) => {
     fetchIds()
   }, [])
   
-  let isSuccess = isPokemonCaught ? "GOTCHA" : "OH NO...";
+  // titleMessage give title for modal
+  // message give description whether pokemon successfully caught or not 
+  let titleMessage = isPokemonCaught ? "GOTCHA" : "OH NO...";
   let message = isPokemonCaught ? "was caught!" : "has escaped";
 
+  // nickname for newly caught pokemon
   const [nickname, setNickname] = useState("");
-
+  
+  //handle input text
   const handleNicknameInput = (event) => {
     event.preventDefault();
     setNickname(event.target.value);
   };
 
+  // register caught pokemon id to idb-keyval
+  // OR set up to idb-keyval if no pokemon is caught
   const registerPokemonId = () => {
     if (nameList.includes('')) {
       const newIds = [...registeredIds, pokemonDetail.pokemon.id]
@@ -41,14 +50,15 @@ const PokemonCatchModal = ({ pokemon, isPokemonCaught, pokemonDetail }) => {
     }
   }
 
+  // action if validate nickname successful
   const history = useHistory()
   const setMyPokemon = () => {
     set(nickname, pokemonDetail)
     registerPokemonId()
-    console.log(nameList.includes(''))
     history.push('/myPokemonList')
   }
 
+  // check if nickname alrdy registered
   const validateNickname = () => {
     if (nameList.includes(nickname)) {
       document.getElementById("nicknameErrMessage").innerHTML = "Name already registered. Please choose another name"
@@ -61,7 +71,7 @@ const PokemonCatchModal = ({ pokemon, isPokemonCaught, pokemonDetail }) => {
 
   return (
     <div className="catch-modal">
-      <p className="catch-modal__title">{isSuccess}</p>
+      <p className="catch-modal__title">{titleMessage}</p>
       <p className="catch-modal__title">
         {pokemon} {message}
       </p>

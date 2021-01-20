@@ -1,12 +1,14 @@
 import React from "react";
 import { Link } from "react-router-dom";
-
 import "../assets/PokemonTile.css";
+
+// pokemon tile or pokemon card to display pokemon in home page and my pokemon list
 
 const PokemonTile = ({ id, name, imageURL, myIdList = [], isMyPokemon = false }) => {
   const redirectLink = isMyPokemon ? `/myPokemonDetail/${name}` : `/pokemonDetail/${name}`
-  let count = 0
   
+  // count if this particular type of pokemon is caught
+  let count = 0
   if (!isMyPokemon) {
     if (myIdList.includes(id)) {
       myIdList.forEach( (myId) => {
