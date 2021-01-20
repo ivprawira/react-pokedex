@@ -21,7 +21,7 @@ const MyPokemonDetail = () => {
       setDetail(result)
     }
     fetchDetail()
-  }, [])
+  }, [name])
 
   // fetch my pokemon ids
   const [registeredIds, setRegisteredIds] = useState([])
