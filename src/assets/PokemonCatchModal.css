@@ -72,4 +72,8 @@
         width: 100px;
         height: 100px;
     }
+
+    .catch-modal__try-again {
+        margin-top: 50px;
+    }
 }
