@@ -1,9 +1,18 @@
-import React, { useState } from "react";
-import { set } from 'idb-keyval'
+import React, { useState, useEffect } from "react";
+import { set, keys } from 'idb-keyval'
 import { useHistory } from 'react-router-dom'
 import "../assets/PokemonCatchModal.css";
 
 const PokemonCatchModal = ({ pokemon, isPokemonCaught, pokemonDetail }) => {
+  const [nameList, setNameList] = useState([]);
+  useEffect( () => {
+    const fetchData = async () => {
+      const result = await keys()
+      setNameList(result)
+    }
+    fetchData()
+  }, [])
+  
   let isSuccess = isPokemonCaught ? "GOTCHA" : "OH NO...";
   let message = isPokemonCaught ? "was caught!" : "has escaped";
 
@@ -17,8 +26,18 @@ const PokemonCatchModal = ({ pokemon, isPokemonCaught, pokemonDetail }) => {
   const history = useHistory()
   const setMyPokemon = () => {
     set(nickname, pokemonDetail)
-    history.push('/')
+    history.push('/myPokemonList')
   }
+
+  const validateNickname = () => {
+    if (nameList.includes(nickname)) {
+      document.getElementById("nicknameErrMessage").innerHTML = "Name already registered. Please choose another name"
+    }
+    else {
+      setMyPokemon()
+    }
+  }
+
 
   return (
     <div className="catch-modal">
@@ -36,8 +55,9 @@ const PokemonCatchModal = ({ pokemon, isPokemonCaught, pokemonDetail }) => {
           <img src={pokemonDetail.pokemon.sprites.front_default} alt="Pokemon Sprites" />
           <p className="catch-modal__caption">let's give nickname to your new friend!</p>
           <input type="text" value={nickname} onChange={handleNicknameInput} />
-          {(nickname.length > 0) && (<button onClick={setMyPokemon}>Confirm</button>)}
-        </>
+          <p id="nicknameErrMessage" className="catch-modal__error"></p>
+          {(nickname.length > 0) && (<button onClick={validateNickname}>Confirm</button>)}
+          </>
       )}
     </div>
   );

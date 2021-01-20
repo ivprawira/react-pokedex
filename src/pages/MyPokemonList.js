@@ -17,9 +17,6 @@ const MyPokemonList = () => {
     fetchData()
   }, [])
 
-  console.log('AA')
-  console.log(pokemonList)
-
   return (
     <>
       <Navbar pageTitle="My Pokémon List" />

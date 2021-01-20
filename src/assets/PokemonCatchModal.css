@@ -30,8 +30,15 @@
 
 .catch-modal__caption {
     font-size: 1.3rem;
-    margin: 0;
+    margin: 20px;
     color: #eeeeee;
+    text-align: center;
+}
+
+.catch-modal__error {
+    font-size: 0.8rem;
+    margin: 20px;
+    color: #db6969;
     text-align: center;
 }
 
@@ -39,7 +46,6 @@
     padding: 12px 20px;
     border-radius: 8px;
     font-size: 1.5rem;
-    margin: 20px 0;
 }
 
 .catch-modal button {
@@ -49,4 +55,21 @@
     cursor: pointer;
     color: #f8f8f8;
     background-color: #26D07C;
+}
+
+@media screen and (max-width: 600px) {
+    .catch-modal {
+        padding-top: 50px;
+    }
+
+    .catch-modal input {
+        padding: 6px 10px;
+        border-radius: 8px;
+        font-size: 1rem;
+    }
+    
+    .catch-modal img {
+        width: 100px;
+        height: 100px;
+    }
 }
