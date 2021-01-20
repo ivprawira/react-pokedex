@@ -9,9 +9,44 @@
     padding-top: 100px;
 }
 
-.catch-modal p {
+.catch-modal__title {
     text-align: center;
     color: #eeeeee;
-    font-size: 3rem;
+    font-size: 2rem;
     margin: 0;
+}
+
+.catch-modal__try-again {
+    text-align: center;
+    color: #eeeeee;
+    font-size: 2rem;
+    margin-top: 200px;
+}
+
+.catch-modal img {
+    width: 300px;
+    height: 300px;
+}
+
+.catch-modal__caption {
+    font-size: 1.3rem;
+    margin: 0;
+    color: #eeeeee;
+    text-align: center;
+}
+
+.catch-modal input {
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-size: 1.5rem;
+    margin: 20px 0;
+}
+
+.catch-modal button {
+    padding: 8px 40px;
+    font-size: 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    color: #f8f8f8;
+    background-color: #26D07C;
 }

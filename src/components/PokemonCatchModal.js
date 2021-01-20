@@ -4,8 +4,8 @@ import { useHistory } from 'react-router-dom'
 import "../assets/PokemonCatchModal.css";
 
 const PokemonCatchModal = ({ pokemon, isPokemonCaught, pokemonDetail }) => {
-  let isSuccess = isPokemonCaught ? "GOTCHA" : "FAILED";
-  let message = isPokemonCaught ? "was caught!" : "escaped!";
+  let isSuccess = isPokemonCaught ? "GOTCHA" : "OH NO...";
+  let message = isPokemonCaught ? "was caught!" : "has escaped";
 
   const [nickname, setNickname] = useState("");
 
@@ -22,13 +22,23 @@ const PokemonCatchModal = ({ pokemon, isPokemonCaught, pokemonDetail }) => {
 
   return (
     <div className="catch-modal">
-      <p>{isSuccess}</p>
-      <p>
+      <p className="catch-modal__title">{isSuccess}</p>
+      <p className="catch-modal__title">
         {pokemon} {message}
       </p>
-      <img src={pokemonDetail.pokemon.sprites.front_default} alt="Pokemon Sprites" />
-      <input type="text" value={nickname} onChange={handleNicknameInput} />
-      <button onClick={setMyPokemon}>Confirm</button>
+      {!isPokemonCaught && (
+        <p className="catch-modal__try-again">
+          try again?
+        </p>
+      )}
+      {isPokemonCaught && (
+        <>
+          <img src={pokemonDetail.pokemon.sprites.front_default} alt="Pokemon Sprites" />
+          <p className="catch-modal__caption">let's give nickname to your new friend!</p>
+          <input type="text" value={nickname} onChange={handleNicknameInput} />
+          <button onClick={setMyPokemon}>Confirm</button>
+        </>
+      )}
     </div>
   );
 };
