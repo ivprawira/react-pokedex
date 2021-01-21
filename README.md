@@ -14,7 +14,7 @@ This project was build mainly using:
 - idb-keyval https://www.npmjs.com/package/idb-keyval
 
 
-To visit a playground website click here: 
+To visit a playground website click here: https://react-pokedex-project.netlify.app/
 
 -----------------------------------------------------------------------
 # Getting Started with React-Pokemon App
